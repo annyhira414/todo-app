@@ -1,0 +1,66 @@
+.App {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.columns {
+  display: flex;
+}
+
+.column {
+  margin: 0 20px;
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.todo-item {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.todo-item h4 {
+  margin-top: 0;
+}
+
+form {
+  margin-top: 10px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+/* TodoItem.css */
+.todo-item {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.todo-item h4 {
+  margin-top: 0;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 8px;
+}
