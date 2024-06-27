@@ -1,14 +1,6 @@
-import PropTypes from 'prop-types';
-import { Close } from '@mui/icons-material';
-import {
-  Box,
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  IconButton,
-} from '@mui/material';
+import PropTypes from "prop-types";
+import { Close } from "@mui/icons-material";
+import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton } from "@mui/material";
 
 const CustomDialog = (props) => {
   const { children, title, cancelProps, okProps } = props;
@@ -20,16 +12,14 @@ const CustomDialog = (props) => {
   return (
     <Dialog open onClick={(e) => e.stopPropagation()}>
       <DialogTitle>
-        <Box display='flex' justifyContent='space-between'>
+        <Box display="flex" justifyContent="space-between">
           <Box> {title}</Box>
           <Box>
             <IconButton
               onClick={(e) =>
-                cancelProps?.crossIconAction
-                  ? cancelProps?.crossIconAction(e)
-                  : cancelProps?.onClick(e)
+                cancelProps?.crossIconAction ? cancelProps?.crossIconAction(e) : cancelProps?.onClick(e)
               }
-              size='small'
+              size="small"
             >
               <Close />
             </IconButton>
@@ -39,19 +29,18 @@ const CustomDialog = (props) => {
       <DialogContent>{children}</DialogContent>
       <DialogActions
         sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
+          display: "flex",
+          justifyContent: "space-between",
         }}
       >
-        {/* <Box> */}
-        <Button onClick={cancelProps?.onClick} variant='outlined'>
+        <Button onClick={cancelProps?.onClick} variant="outlined">
           {cancelProps?.label}
         </Button>
         <Button
           form={okProps?.formId}
-          onClick={okProps?.type === 'submit' ? null : onOkClick}
+          onClick={okProps?.type === "submit" ? null : onOkClick}
           type={okProps?.type}
-          variant='contained'
+          variant="contained"
         >
           {okProps?.label}
         </Button>
@@ -71,7 +60,7 @@ CustomDialog.propTypes = {
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       onClick: PropTypes.func,
-      type: PropTypes.oneOf(['submit']),
+      type: PropTypes.oneOf(["submit"]),
       formId: PropTypes.string,
     }).isRequired,
     PropTypes.shape({
